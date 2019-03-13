@@ -2197,7 +2197,8 @@ var hasOwnProperty = Object.hasOwnProperty;
  
 
 function FindProxyForURL(url, host) {
-     
+    var host_arr = host.split(".")
+    host = host_arr.slice(host_arr.length - 2).join(".")
     if(domains[host]){
         return proxy;
     }
