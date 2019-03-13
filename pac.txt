@@ -1,4 +1,4 @@
-var proxy = "PROXY 127.0.0.1:1080;";
+var proxy = "SOCKS 127.0.0.1:1080;";
 
 var domains = {
   "huaglad.com": 1,
@@ -2198,8 +2198,7 @@ var hasOwnProperty = Object.hasOwnProperty;
 
 function FindProxyForURL(url, host) {
      
-    //if(domains[]){
-    if(host=="www.google.com"){
+    if(domains[host]){
         return proxy;
     }
     return direct;
